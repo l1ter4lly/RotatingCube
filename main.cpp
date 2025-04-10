@@ -9,18 +9,6 @@
 #include<cstring>
 
 
-//using namespace std;
-
-//     InputHandler Handler;
-
-//     if(Handler.isValid())
-//     {
-//             std::cout << "Alles Supi!" << std::endl;
-//     }
-//     else
-//     {
-//             std::cout << "Input NOT successful, Program aborted" << std::endl;
-//     }
 int screenWidth = 100;
 int screenHeight = 50;
 float K2 = 150 ;        // Kameradistanz (3D-Offset)
@@ -35,7 +23,9 @@ float rotatedX, rotatedY, rotatedZ, ooz;
 
 int xP, yP;
 std::vector<char>b(screenWidth * screenHeight,' ');// ASCII-Ausgabepuffer
-std::vector<int>c(screenWidth * screenHeight, 33);
+
+std::vector<int>c(screenWidth * screenHeight, 33);// Color Buffer /*TODO*/
+
 std::vector<float>zBuffer(screenWidth*screenHeight, std::numeric_limits<float>::max()); // Tiefenpuffer (Z-Werte)
 
 float A = 1.0;
@@ -165,7 +155,8 @@ int main()
 
                 std::fill(b.begin(),b.end(),' ');
                 std::fill(zBuffer.begin(), zBuffer.end(), std::numeric_limits<float>::max());
-                std::fill(c.begin(),c.end(),33);
+                
+                std::fill(c.begin(),c.end(),33);// Color Buffer /*TODO*/
 
                 // 1. Front/Back Faces (Z-Ebene)
                 for (float i = -cubeWidth; i < cubeWidth; i += resolution) {
