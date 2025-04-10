@@ -1,0 +1,1 @@
+Small experimental Project to rotate a Cube in the Command Window with ASCII Characters. Implemented with Rotation Matrices. Manipulation of direction or speed through user input as well as colored sides to be added in the future.
